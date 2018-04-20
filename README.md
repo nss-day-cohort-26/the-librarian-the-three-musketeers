@@ -6,7 +6,6 @@ Your job is to build a system that allows the public to interact with a libraria
 
 Build a database of books. Each book will have the following properties.
 
-1. Book object
 1. Title
 1. Author
 1. Genre

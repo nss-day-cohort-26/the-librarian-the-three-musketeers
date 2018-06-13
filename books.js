@@ -5,28 +5,32 @@ const library = {};
 const Book = Object.create({}, {
     title: {
         value: "",
-        enumurable: true
+        enumerable: true,
+        writable: true
     },
     author: {
         value: "",
-        enumurable: true
+        enumerable: true,
+        writable: true
     },
     genre: {
         value: "",
-        enumurable: true,
+        enumerable: true,
+        writable: true
     },
     isbnNumb: {
         value: "",
-        enumerable: true
+        enumerable: true,
+        writable: true
     },
     checkedOut: {
         value: false,
-        enumrable: true,
+        enumerable: true,
         writable: true
     },
     dueDate: {
         value: {},
-        enumrable: true,
+        enumerable: true,
         writable: true
     }
 });

@@ -18,7 +18,7 @@ class Customer {
 
     ReturnBook(title){
         if (this.shelf[title]){
-            librarian.return(this.shelf[title]);
+            librarian.return(title);
             delete this.shelf[title]
         } else{
             alert('You can not return a book you do not have')

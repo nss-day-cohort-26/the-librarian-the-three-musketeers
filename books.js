@@ -54,3 +54,20 @@ const life3 = bookCreator("Life 3.0", "Max Tegmark", "Sci-Fi", "978-1-101-94659-
 const mockingbird = bookCreator("To Kill A Mocking Bird", "Harper Lee", "Southern Gothic", "978-0446310789");
 
 const gatsby = bookCreator("The Great Gatsby", "F. Scott Fitzgerald", "Fiction", "978-0743273565");
+
+// Local Storage
+
+const saveDB = function (dbObject, localStorageKey) {
+    const stringifiedDatabase = JSON.stringify(dbObject)
+
+    localStorage.setItem(localStorageKey, stringifiedDatabase)
+}
+
+saveDB(library, "Library");
+
+const loadDB = function (localStorageKey) {
+    const dbString = localStorage.getItem(localStorageKey)
+    return JSON.parse(dbString)
+}
+
+const loadDatabase = loadDB("Library");

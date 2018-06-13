@@ -19,5 +19,31 @@ const librarian = Object.create({}, {
     }
   },
 
+  return: {
+    value: function (customer, title) {
+      if (library[title].checkedOut === true) {
+        const today = new Date();
+        if (today.now() > library[title].dueDate.now()) {
+          customer.fees += 5;
+          console.log(`The overdue fee is $5.00; you owe a total of ${customer.fees}`);
+        }
+        library[title].checkedOut = false;
+        library[title].dueDate = {};
+      }
+    }
+  },
+
+  recommend: {
+    value: function (genre) {
+      const booksByGenre = [];
+      for (book in library) {
+        if ((library[book].genre === genre) && (library[book].checkedOut === false)) {
+          booksByGenre.push(library[book]);
+        }
+      }
+      return booksByGenre;
+    }
+  }
+
 });
 

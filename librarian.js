@@ -1,3 +1,5 @@
+let bookOverdue = false;
+
 const librarian = Object.create({}, {
   register: {
     value: function (customer) {
@@ -22,11 +24,13 @@ const librarian = Object.create({}, {
 
   return: {
     value: function (customer, title) {
+      bookOverdue = false;
       if (library[title].checkedOut === true) {
         const today = new Date();
         if (today.getTime() > library[title].dueDate.getTime()) {
+          bookOverdue = true;
           customer.fees += 5;
-          console.log(`The overdue fee is $5.00; you owe a total of ${customer.fees}`);
+          console.log(`The overdue fee is $5.00, so you now owe a total of $${customer.fees}.00; shame on you for returning things late!`);
         }
         library[title].checkedOut = false;
         library[title].dueDate = {};

@@ -5,6 +5,7 @@ class Customer {
         this.shelf = {}
         this.first = name.split(" ")[0]
         this.last = name.split(" ")[1]
+        this.fees = 0;
         this.cardNumber = 0;
 
     }
@@ -18,7 +19,7 @@ class Customer {
 
     ReturnBook(title){
         if (this.shelf[title]){
-            librarian.return(title);
+            librarian.return(this, title);
             delete this.shelf[title]
         } else{
             alert('You can not return a book you do not have')

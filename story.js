@@ -2,6 +2,10 @@ const sideBar = document.querySelector("#side-bar");
 const fragment = document.createDocumentFragment();
 
 const booksAvailable = () => {
+        const cleardiv = document.querySelector('#side-bar')
+        while (cleardiv.firstChild){
+            cleardiv.removeChild(cleardiv.firstChild)
+        }
         let booksHeader = document.createElement("h3");
         booksHeader.innerHTML = `Library Inventory:`;
         let booksDesc = document.createElement("h5");
@@ -14,9 +18,9 @@ const booksAvailable = () => {
             available.innerHTML = `${avail}`;
             available.style.color = "green";
             fragment.appendChild(available);
-        } else if (library[prop].checkedOut === true) {
+        } else if (library[avail].checkedOut === true) {
             let unavailable = document.createElement("li");
-            unavailable.innerHTML = `${prop}`;
+            unavailable.innerHTML = `${avail}`;
             unavailable.style.color = "red";
             fragment.appendChild(unavailable);
         } 
@@ -43,8 +47,11 @@ function check(){
     const title = document.querySelector('#book').value
     const cust = document.querySelector('#cust').value
     customers[cust].Checkout(title)
+    logEvent();
+
     const inputs = document.querySelectorAll('input')
     inputs.forEach(x => x.value = "")
+    booksAvailable();
 }
 
 function ret(){
@@ -53,7 +60,10 @@ function ret(){
     const cust = document.querySelector('#cust').value
     customers[cust].ReturnBook(title)
     const inputs = document.querySelectorAll('input')
+    logEvent()
+
     inputs.forEach(x => x.value = "")
+    booksAvailable();
 }
 
 function cardMake(){
@@ -61,6 +71,8 @@ function cardMake(){
     const title = document.querySelector('#book').value
     const cust = document.querySelector('#cust').value
     librarian.register(customers[cust])
+    logEvent();
+
     const inputs = document.querySelectorAll('input')
     inputs.forEach(x => x.value = "")
 }
@@ -74,20 +86,15 @@ function recom(){
         const br = document.createElement('br')
         recombler.appendChild(br)
         const tite = vol.title
+        console.log(tite)
         const tex = document.createTextNode(tite)
-        recombler.appendChild(br)
+        recombler.appendChild(tex)
     } )
+    logEvent();
+
     const inputs = document.querySelectorAll('input')
     inputs.forEach(x => x.value = "")
 }
-
-checkButton.addEventListener('click', check)
-retButton.addEventListener('click', ret)
-cardButton.addEventListener('click', cardMake)
-recButton.addEventListener('click', recom)
-
-
-
 const logEvent = () => {
     // Gets the book from the input field
     const bookInput = document.querySelector("#book");
@@ -98,8 +105,8 @@ const logEvent = () => {
     const currentCustomer = customerInput.value;
 
     // // Will eventually get the genre from the input field
-    // const genreInput = document.querySelector("#genre");
-    // const currentGenre = genreInput.value;
+    const genreInput = document.querySelector("#genre");
+    const currentGenre = genreInput.value;
 
     const eventType = event.target.id;
     let eventMessage = ``;
@@ -114,11 +121,11 @@ const logEvent = () => {
                 eventMessage += `Since ${currentBook} was overdue, ${currentCustomer} was fined $5.00 and scolded by the librarian.`;
             }
             break;
-        case "register":
+        case "libCard":
             eventMessage = `${currentCustomer} just got a new library card! Happy reading, ${currentCustomer}!`
             break;
         case "recommend":
-            eventMessage = `The librarian just recommended some ${genre} books for ${currentCustomer}!`
+            eventMessage = `The librarian just recommended some ${currentGenre} books for ${currentCustomer}!`
             break;
         default:
             break;
@@ -129,3 +136,12 @@ const logEvent = () => {
     eventNode.textContent = eventMessage;
     logDiv.appendChild(eventNode);
 }
+
+
+checkButton.addEventListener('click', check)
+retButton.addEventListener('click', ret)
+cardButton.addEventListener('click', cardMake)
+recButton.addEventListener('click', recom)
+
+
+

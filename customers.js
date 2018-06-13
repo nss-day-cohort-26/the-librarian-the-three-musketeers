@@ -27,7 +27,10 @@ class Customer {
     }
 
 }
-
+const customers = {}
 const EHuck = new Customer(['sci-fi', 'fantasy', 'mystery'], 'Elliot Huck', '123 Some St.')
 const ELusky = new Customer(['sci-fi',  'fantasy', 'graphic-novel'], 'Evan Lusky', '666 Other St.')
 const SReddy = new Customer(['sci-fi', 'bio', 'self-improvement'], 'Sathvik Reddy', '777 Lucky St.')
+customers['Evan Lusky'] = ELusky
+customers['Elliot Huck'] = EHuck
+customers['Sathvik Reddy'] = SReddy

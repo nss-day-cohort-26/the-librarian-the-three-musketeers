@@ -11,7 +11,6 @@
     <iframe width="0" height="0" border="0" name="dummyframe" id="dummyframe"></iframe>
     <h1 id='title'>SOME KIND OF PUBLIC LIBRARY OR WHATEVER</h1>
     <div class="container">
-            <form action="action_page.php" target="dummyframe">
           
               <label for="fname">Customer</label>
               <input type="text" id="cust" name="Customer" placeholder="Customer..">
@@ -21,8 +20,15 @@
           
               <button id='checkout'>Check Out</button>
               <button id='return'>Return</button>
+              <br />
+              <label for="fname">Reccomendation</label>
+              <input type="text" id="genre" name="Customer" placeholder="Book genre...">
+              <button id='recommend'>Recommend</button>
+              <div id='recommendations'></div>
+              <br />
+              <button id='libCard'>Create Library Card</button>
+              <div id='cardStatus'></div>
                 
-            </form>
           </div>
     <div id='log'>
         
@@ -30,6 +36,8 @@
     <script src="librarian.js"></script>
     <script src="books.js"></script>
     <script src="customers.js"></script>
+    <script src="story.js"></script>
+
 
 </body>
 </html>

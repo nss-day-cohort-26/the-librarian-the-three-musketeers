@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,29 +8,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
 </head>
+
 <body>
     <iframe width="0" height="0" border="0" name="dummyframe" id="dummyframe"></iframe>
     <h1 id='title'>SOME KIND OF PUBLIC LIBRARY OR WHATEVER</h1>
     <div class="container">
-            <form action="action_page.php" target="dummyframe">
-          
-              <label for="fname">Customer</label>
-              <input type="text" id="cust" name="Customer" placeholder="Customer..">
-          
-              <label for="lname">Book Title</label>
-              <input type="text" id="book" name="Book" placeholder="Book title..">
-          
-              <button id='checkout'>Check Out</button>
-              <button id='return'>Return</button>
-                
-            </form>
-          </div>
+        <form action="action_page.php" target="dummyframe">
+
+            <label for="fname">Customer</label>
+            <input type="text" id="cust" name="Customer" placeholder="Customer..">
+
+            <label for="lname">Book Title</label>
+            <input type="text" id="book" name="Book" placeholder="Book title..">
+
+            <button id='checkout'>Check Out</button>
+            <button id='return'>Return</button>
+
+        </form>
+    </div>
     <div id='log'>
-        
+
     </div>
     <script src="librarian.js"></script>
     <script src="books.js"></script>
     <script src="customers.js"></script>
 
 </body>
+
 </html>

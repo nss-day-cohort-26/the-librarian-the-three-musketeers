@@ -47,7 +47,7 @@ const bookCreator = (title, author, genre, isbnNumb) => {
 
 // Library of Books
 
-const elonMusk = bookCreator("Elon Musk: Tesla, SpaceX, and the Quest for a Fantastic Future", "Ashlee Vance", "Biography", "978-0062301239");
+const elonMusk = bookCreator("Elon Musk", "Biography", "978-0062301239");
 
 const steveJobs = bookCreator("Steve Jobs", "Walter Isaacson", "Biography", "1-4516-4853-7");
 
@@ -55,7 +55,7 @@ const mobyDick = bookCreator("Moby-Dick", "Herman Melville", "Fiction", "978-0-3
 
 const scarTissue = bookCreator("Scar Tissue", "Anthony Kiedis", "Autobiography", "1-4013-0101-0");
 
-const gandhi = bookCreator("The Story of My Experiments with Truth", "Mahatma Gandhi", "Autobiography", "978-0486245935")
+const gandhi = bookCreator("The Story of My Experiments", "Mahatma Gandhi", "Autobiography", "978-0486245935")
 
 const life3 = bookCreator("Life 3.0", "Max Tegmark", "Sci-Fi", "978-1-101-94659-6");
 

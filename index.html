@@ -8,9 +8,25 @@
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
 </head>
 <body>
-    <div id = "text-output"></div>
-    <div id = "text-input"></div>
-    <div id = "log"></div>
+    <iframe width="0" height="0" border="0" name="dummyframe" id="dummyframe"></iframe>
+    <h1 id='title'>SOME KIND OF PUBLIC LIBRARY OR WHATEVER</h1>
+    <div class="container">
+            <form action="action_page.php" target="dummyframe">
+          
+              <label for="fname">Customer</label>
+              <input type="text" id="cust" name="Customer" placeholder="Customer..">
+          
+              <label for="lname">Book Title</label>
+              <input type="text" id="book" name="Book" placeholder="Book title..">
+          
+              <button id='checkout'>Check Out</button>
+              <button id='return'>Return</button>
+                
+            </form>
+          </div>
+    <div id='log'>
+        
+    </div>
     <script src="librarian.js"></script>
     <script src="books.js"></script>
     <script src="customers.js"></script>
